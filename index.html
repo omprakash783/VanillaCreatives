@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Creatives</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-circle"></div>
+      <div class="header-circle"></div>
+      <div class="header-circle"></div>
+    </div>
+    <div class="content" id="content">
+      <h3>Filter By</h3>
+      <div class="filter-body">
+        <div class="color-skeleton" id="color-skeleton">
+          <p></p>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="color-container" id="color-container">
+          <span>color</span>
+          <div class="color-body" id="color-body"></div>
+        </div>
+        <div class="input-container">
+          <label>title / subtitle</label>
+          <input
+            type="text"
+            id="filter-input"
+            style="width: 250px"
+            onkeyup="handleFilterTitle()"
+          />
+        </div>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+          <div class="bar-item" id="bar-item"></div>
+        </div>
+        <div id="creative-count">0 / 5 Creatives</div>
+      </div>
+      <button
+        class="creative-button"
+        id="creative-button"
+        onclick="handleAddingCreative()"
+      >
+        + Add Creative
+      </button>
+      <div class="modal" id="drawer">
+        <div class="modal-head">
+          <h3 class="modal-title">Creative Creation</h3>
+          <div
+            class="modal-close"
+            id="modal-close"
+            onclick="handleModalClose()"
+          >
+            X
+          </div>
+        </div>
+        <div class="modal-content">
+          <div class="input-container">
+            <label>title</label>
+            <input id="title" type="text" onkeyup="handleTitle()" />
+          </div>
+          <div class="input-container">
+            <label>subtitle</label>
+            <input type="text" id="subtitle" onkeyup="handleTitle()" />
+          </div>
+          <div class="color-container" id="drawer-color-container">
+            <span>background color</span>
+            <div class="color-body" id="drawer-color-body"></div>
+          </div>
+          <button
+            class="done-button"
+            id="done-button"
+            disabled
+            onclick="handleDone()"
+          >
+            DONE
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
